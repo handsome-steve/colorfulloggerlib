@@ -40,9 +40,9 @@ import java.util.Objects;
  * }
  * </pre>
  *
- * <p>Please consider that this is a work in progress. Users are welcome contribute ideas or pull requests to the github repository: <a href="https://github.com/handsome-steve/handsomesteves-colorful-logger">https://github.com/handsome-steve/handsomesteves-colorful-logger</a> </p>
+ * <p>Please consider that this is a work in progress. Users are welcome contribute ideas or pull requests to the github repository: <a href="https://github.com/handsome-steve/colorfulloggerlib">https://github.com/handsome-steve/colorfulloggerlib</a> </p>
  * @author handsome-steve
- * @version 1.0
+ * @version 1.0.0
  */
 
 public final class ColorfulLogger
