@@ -1,0 +1,104 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group = project.maven_group
+version = project.lib_version
+base {
+    archivesName = project.archives_base_name
+}
+
+ext {
+    theVendor = 'handsomesteve.com'
+    theTitle = 'Handsome Steve: Colorful Logger Library'
+    titleForDocumentation = project.archives_base_name + ' ' + version
+    copyrightString = 'CC0 1.0 Universal'
+    packageTitle = group
+    description = 'This library is designed to simplify a specific aspect of Minecraft Modding workflows by making it easy to add ANSI color to your Logger calls.'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform("org.junit:junit-bom:${project.junit_bom_version}")
+    testImplementation "org.junit.jupiter:junit-jupiter"
+
+    implementation "org.slf4j:slf4j-reload4j:${project.slf4f_reload4j_version}"
+
+    implementation "org.jetbrains:annotations:${project.jetbrains_annotations_version}"
+    implementation "org.slf4j:slf4j-api:${project.slf4j_version}"
+}
+
+processResources {
+    inputs.property "version", project.version
+}
+
+java {
+    // If this line is removed, Javadocs JAR will not be generated.
+    //withJavadocJar()
+    // If this line is removed, Sources JAR will not be generated.
+    withSourcesJar()
+
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+javadoc {
+    options {
+        overview('overview.html')
+        showAll()
+        encoding('UTF-8')
+
+        setUse(true)
+        author(true)
+        version(true)
+        windowTitle(titleForDocumentation)
+        docTitle(titleForDocumentation)
+        footer(copyrightString)
+        doFirst {
+            javadoc.title = titleForDocumentation
+            javadoc.options.docTitle = javadoc.title
+        }
+    }
+}
+
+if (JavaVersion.current().isJava8Compatible()) {
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+        }
+    }
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.base.archivesName.get()}"}
+    }
+}
+
+// configure the maven publication
+publishing {
+    publications {
+        create("mavenJava", MavenPublication) {
+            groupId = project.maven_group
+            artifactId = project.archives_base_name
+            version = project.lib_version
+            from components.java
+        }
+    }
+
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+    repositories {
+        // Add repositories to publish to here.
+        // Notice: This block does NOT have the same function as the block in the top level.
+        // The repositories here will be used for publishing your artifact, not for
+        // retrieving dependencies.
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
