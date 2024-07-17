@@ -40,7 +40,7 @@ Add an implementation to your `build.gradle` in the dependencies section:
 
 <br>Add the version variable to your `gradle.properties` and replace the version by the desired available library version of your choice:
 ```groovy
-    handsomesteves_colorful_logger=1.0.0+1.21
+    handsomesteves_colorful_logger=1.0.1
 ```
 
 ## Implementation

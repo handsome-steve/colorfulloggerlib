@@ -42,7 +42,7 @@ import java.util.Objects;
  *
  * <p>Please consider that this is a work in progress. Users are welcome contribute ideas or pull requests to the github repository: <a href="https://github.com/handsome-steve/colorfulloggerlib">https://github.com/handsome-steve/colorfulloggerlib</a> </p>
  * @author handsome-steve
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 public final class ColorfulLogger
