@@ -25,20 +25,17 @@ Add the Modrinth Maven Repository to your `build.gradle` in the repositories sec
 Add an implementation to your `build.gradle` in the dependencies section:
 ```groovy
     dependencies {
-    modApi "maven.modrinth:colorfulloggerlib:${project.handsomesteves_colorful_logger}"
+    api "maven.modrinth:colorfulloggerlib:${project.handsomesteves_colorful_logger}"
     // SOURCES FILE NEEDS MANUAL DOWNLOAD, SEE BOTTOM OF PAGE
-    //modApi "maven.modrinth:colorfulloggerlib:${project.handsomesteves_colorful_logger}:sources"
+    //api "maven.modrinth:colorfulloggerlib:${project.handsomesteves_colorful_logger}:sources"
     
     // Embed the API into your mod so users do not have to manually download it here.
     include "maven.modrinth:colorfulloggerlib:${project.handsomesteves_colorful_logger}"
 }
 ```
-> **NOTE:** Ensure that ***modApi*** is used when declaring the dependency, instead of ***api***, otherwise your mod will throw the following error at runtime:
->> *Namespace (intermediary) does not match current runtime namespace (named)*
->
-> [See: Modrinth - Dependency configuration](https://support.modrinth.com/en/articles/8801191-modrinth-maven#h_2484bbd424)
+<br>
 
-<br>Add the version variable to your `gradle.properties` and replace the version by the desired available library version of your choice:
+Add the version variable to your `gradle.properties` and replace the version by the desired available library version of your choice:
 ```groovy
     handsomesteves_colorful_logger=1.0.1
 ```
