@@ -3,6 +3,19 @@
 #### Ever wanted to add some color to your LOGGER during the development of your minecraft mods in a simple, yet functional manner?<br>
 Well look no further, Handsome Steve has you covered! This simple library allows you to do just that by utilizing a wide range of pre-defined ANSI codes.<br>
 
+**EDIT: Installation code below has been updated to reflect [Modrinth Maven](https://support.modrinth.com/en/articles/8801191-modrinth-maven), apologies in for any inconveniences**
+<br>
+## FAQ
+**Q: Is this a mod?**
+<br>Techinally, no. This is a library, so it's only really used when developing a mod, however, it may be required as a dependency when the dependent mod is being installed on a client/server depending on what platform the dependent mod is targeting and how the mod developer is utilising the library.
+<br><br>
+**Q: Can I use this library as a dependency in my project?**
+<br> Absolutely, go nuts!
+<br><br>
+**Q: Does this library require a specific Fabric Version?**
+<br> Nope, it's now standalone, so as long as your modding platform uses `org.slf4j.Logger`, it will work regardless of the version.
+<br><br>
+
 ## Installation
 Add the Modrinth Maven Repository to your `build.gradle` in the repositories section:
 ```groovy
@@ -25,17 +38,14 @@ Add the Modrinth Maven Repository to your `build.gradle` in the repositories sec
 Add an implementation to your `build.gradle` in the dependencies section:
 ```groovy
     dependencies {
-    api "maven.modrinth:colorfulloggerlib:${project.handsomesteves_colorful_logger}"
-    // SOURCES FILE NEEDS MANUAL DOWNLOAD, SEE BOTTOM OF PAGE
-    //api "maven.modrinth:colorfulloggerlib:${project.handsomesteves_colorful_logger}:sources"
-    
-    // Embed the API into your mod so users do not have to manually download it here.
-    include "maven.modrinth:colorfulloggerlib:${project.handsomesteves_colorful_logger}"
-}
+        modApi ("maven.modrinth:colorfulloggerlib:${project.handsomesteves_colorful_logger}")
+        // SOURCES FILE NEEDS MANUAL DOWNLOAD, SEE BOTTOM OF PAGE
+    }
 ```
-<br>
+> [**SEE:** Fabric - Dependency Configuration](https://fabricmc.net/wiki/documentation:fabric_loom#options)<br>
+> [**SEE:** Modrinth - Dependency configuration](https://support.modrinth.com/en/articles/8801191-modrinth-maven#h_2484bbd424)
 
-Add the version variable to your `gradle.properties` and replace the version by the desired available library version of your choice:
+<br>Add the version variable to your `gradle.properties` and replace the version by the desired available library version of your choice:
 ```groovy
     handsomesteves_colorful_logger=1.0.1
 ```
@@ -61,9 +71,9 @@ Create a `public static final` instance of the `ColorfulLogger` class. This inst
     }
 ```
 > **NOTE:** `ColorfulLogger` can be declared anywhere in the project. It is recommended, however, to import the declared variable as a *static import* when referencing the instantiated instance:
->> ```java
->> import static com.packagename.FabricMod.LOGGER;
->> ```
+> ```java
+> import static com.packagename.FabricMod.LOGGER;
+> ```
 
 If required, the `Logger` can be interfaced with by calling it as follows:
 ```java
