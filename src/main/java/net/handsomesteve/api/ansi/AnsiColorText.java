@@ -1,4 +1,4 @@
-package com.handsomesteve.api.ansi;
+package net.handsomesteve.api.ansi;
 
 public enum AnsiColorText
 {

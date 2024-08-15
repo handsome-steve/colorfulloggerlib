@@ -1,8 +1,8 @@
-package com.handsomesteve.api;
+package net.handsomesteve.api;
 
-import com.handsomesteve.api.ansi.AnsiColor;
-import com.handsomesteve.api.ansi.AnsiColorBackground;
-import com.handsomesteve.api.ansi.AnsiColorText;
+import net.handsomesteve.api.ansi.AnsiColor;
+import net.handsomesteve.api.ansi.AnsiColorBackground;
+import net.handsomesteve.api.ansi.AnsiColorText;
 
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Objects;
 
 /**
- * Package {@link com.handsomesteve.api}
+ * Package {@link net.handsomesteve.api}
  * <h2>Colorful Logger
  * <p>public final class
  * <p>This class aims at providing a simple, yet robust way, of adding colors to the foreground and background of your debug console when creating your Minecraft Mods.
@@ -42,7 +42,8 @@ import java.util.Objects;
  *
  * <p>Please consider that this is a work in progress. Users are welcome contribute ideas or pull requests to the github repository: <a href="https://github.com/handsome-steve/colorfulloggerlib">https://github.com/handsome-steve/colorfulloggerlib</a> </p>
  * @author handsome-steve
- * @version 1.0.1
+ * @version 1.0.2
+ * @since 1.0.0
  */
 
 public final class ColorfulLogger
@@ -77,7 +78,7 @@ public final class ColorfulLogger
     public void setDebug(boolean value) { this.debug = value; }
 
     /**
-     * <p>Initial constructor of {@link com.handsomesteve.api.ColorfulLogger}
+     * <p>Initial constructor of {@link ColorfulLogger}
      * @param modId This parameter takes a {@link String} as a value, this is usually the Minecraft Mod's {@code MOD_ID}.
      */
     public ColorfulLogger(@NotNull String modId)
@@ -87,9 +88,9 @@ public final class ColorfulLogger
     }
 
     /**
-     * <p>Overload constructor of {@link com.handsomesteve.api.ColorfulLogger}
+     * <p>Overload constructor of {@link ColorfulLogger}
      * @param modId This parameter takes a {@link String} as a value, this is usually the Minecraft Mod's {@code MOD_ID}.
-     * @param hideDebug This parameter takes a {@link Boolean} as a value to determine whether the {@link com.handsomesteve.api.ColorfulLogger} should hide its console output.
+     * @param hideDebug This parameter takes a {@link Boolean} as a value to determine whether the {@link ColorfulLogger} should hide its console output.
      */
     public ColorfulLogger(@NotNull String modId, boolean hideDebug)
     {
@@ -110,7 +111,7 @@ public final class ColorfulLogger
     /**
      * <p>Overload method that prints out a colorful message via the internal {@link org.slf4j.Logger} by coloring the foreground only.
      * @param message Takes the message to be printed out as a {@link String}.
-     * @param ansiColorText Takes an ANSI color value from {@link com.handsomesteve.api.ansi.AnsiColorText}.
+     * @param ansiColorText Takes an ANSI color value from {@link AnsiColorText}.
      */
     public void info(String message, AnsiColorText ansiColorText)
     {
@@ -121,8 +122,8 @@ public final class ColorfulLogger
     /**
      * <p>Overload method that prints out a colorful message via the internal {@link org.slf4j.Logger} by coloring the foreground and background.
      * @param message Takes the message to be printed out as a {@link String}.
-     * @param ansiColorText Takes an ANSI color value from {@link com.handsomesteve.api.ansi.AnsiColorText}.
-     * @param ansiColorBackground Takes an ANSI color value from {@link com.handsomesteve.api.ansi.AnsiColorBackground}.
+     * @param ansiColorText Takes an ANSI color value from {@link AnsiColorText}.
+     * @param ansiColorBackground Takes an ANSI color value from {@link AnsiColorBackground}.
      */
     public void info(String message, AnsiColorText ansiColorText, AnsiColorBackground ansiColorBackground)
     {
