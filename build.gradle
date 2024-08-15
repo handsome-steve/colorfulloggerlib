@@ -10,7 +10,7 @@ base {
 }
 
 ext {
-    theVendor = 'handsomesteve.com'
+    theVendor = 'handsomesteve.net'
     theTitle = 'Handsome Steve: Colorful Logger Library'
     titleForDocumentation = project.archives_base_name + ' ' + version
     copyrightString = 'CC0 1.0 Universal'
