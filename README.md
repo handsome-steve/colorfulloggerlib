@@ -7,8 +7,8 @@
 [ko-fi]:https://ko-fi.com/handsomesteve
 [modrinth]:https://modrinth.com/mod/colorfulloggerlib
 
-[<img align="left" src="https://maven.handsomesteve.net/data/images/buttons/github-buttons-kofi-trans.png?v15-08-2024" width="200" />][ko-fi]
-[<img align="center" src="https://maven.handsomesteve.net/data/images/buttons/github-buttons-modrinth-trans.png?v15-08-2024" width="200" />][modrinth]
+[<img src="https://maven.handsomesteve.net/data/images/buttons/github-buttons-kofi-trans.png?v15-08-2024" width="200" />][ko-fi]
+[<img src="https://maven.handsomesteve.net/data/images/buttons/github-buttons-modrinth-trans.png?v15-08-2024" width="200" />][modrinth]
 
 <br><br>
 <br>
