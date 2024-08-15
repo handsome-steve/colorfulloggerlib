@@ -2,10 +2,11 @@
 <p align="center">
 <img src="https://maven.handsomesteve.net/data/images/banners/handsomesteves-colorful-logger-banner.png" alt="Handsome Steve's Colorful Logger">
 </p>
-<br>
 
 [ko-fi]:https://ko-fi.com/handsomesteve
 [modrinth]:https://modrinth.com/mod/colorfulloggerlib
+
+<br><br>
 
 [<img src="https://maven.handsomesteve.net/data/images/buttons/github-buttons-kofi-trans.png?v15-08-2024" width="200" />][ko-fi]
 [<img src="https://maven.handsomesteve.net/data/images/buttons/github-buttons-modrinth-trans.png?v15-08-2024" width="200" />][modrinth]
