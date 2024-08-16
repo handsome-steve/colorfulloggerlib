@@ -36,6 +36,11 @@ processResources {
     inputs.property "version", project.version
 }
 
+
+compileJava {
+    excludes = ['**/Main.java']
+}
+
 java {
     // If this line is removed, Javadocs JAR will not be generated.
     //withJavadocJar()
@@ -77,6 +82,7 @@ jar {
     from("LICENSE") {
         rename { "${it}_${project.base.archivesName.get()}"}
     }
+    //duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
 }
 
 // configure the maven publication
