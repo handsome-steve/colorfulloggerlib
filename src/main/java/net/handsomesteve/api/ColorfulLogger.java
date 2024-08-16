@@ -66,7 +66,7 @@ public final class ColorfulLogger
     /**
      * Singleton instance of the logger.
      */
-    private static ColorfulLogger instance;
+    private static ColorfulLogger INSTANCE;
 
     /**
      * The primary logger used for output.
@@ -135,15 +135,15 @@ public final class ColorfulLogger
     @NotNull
     public static synchronized ColorfulLogger getInstance(@NotNull String modId)
     {
-        if(instance == null) {
-            instance = new ColorfulLogger(
+        if(INSTANCE == null) {
+            INSTANCE = new ColorfulLogger(
                     Objects.requireNonNull(
                             modId,
                             "[ERROR]: Parameter 'modId' cannot be null at '@ColorfulLogger.getInstance(String)'."
                     )
             );
         }
-        return instance;
+        return INSTANCE;
     }
 
     /**
@@ -157,15 +157,29 @@ public final class ColorfulLogger
     @NotNull
     public static synchronized ColorfulLogger getInstance(@NotNull String modId, boolean showDebug)
     {
-        if(instance == null) {
-            instance = new ColorfulLogger(
+        if(INSTANCE == null) {
+            INSTANCE = new ColorfulLogger(
                     Objects.requireNonNull(
                             modId,
                             "[ERROR]: Parameter 'modId' cannot be null at '@ColorfulLogger.getInstance(String, boolean)'."
             ),
             showDebug);
         }
-        return instance;
+        return INSTANCE;
+    }
+
+    /**
+     * Gets the already-initialized singleton instance of {@link ColorfulLogger}.
+     * This method can only be called after the singleton has been initialized with parameters.
+     *
+     * @return The singleton instance of {@link ColorfulLogger}.
+     * @throws IllegalStateException if the singleton has not been initialized with parameters.
+     */
+    public static synchronized ColorfulLogger getInstance() {
+        if(INSTANCE == null) {
+            throw new IllegalStateException("'@ColorfulLogger' is not initialized. Call '@ColorfulLogger.getInstance(String, boolean)' first.");
+        }
+        return INSTANCE;
     }
 
     /**
