@@ -115,7 +115,20 @@ Create a `public static final` instance of the `ColorfulLogger` class. This inst
 > ```
 > **ALTERNATIVELY:** `ColorfulLogger` can be instanced anywhere in the project and declared as follows if required:
 > ```java
-> private static final ColorfulLogger LOGGER = ColorfulLogger.getInstance();
+> public class References {
+>       private static final ColorfulLogger LOGGER = ColorfulLogger.getInstance();
+>       public static ColorfulLogger getLogger() {
+>           return LOGGER;
+>       }
+> }
+> ```
+> Then accessed:
+> ```java
+> import static com.package.References.getLogger;
+> 
+> public class MyClass {
+>       References.getLogger();
+> }
 > ```
 
 <p>If required, the `Logger` can be interfaced with by calling it as follows:</p>
