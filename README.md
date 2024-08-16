@@ -84,9 +84,9 @@ Add an implementation to your `build.gradle` in the dependencies section:
 > [**SEE:** Fabric - Dependency Configuration](https://fabricmc.net/wiki/documentation:fabric_loom#options)<br>
 > [**SEE:** Modrinth - Dependency configuration](https://support.modrinth.com/en/articles/8801191-modrinth-maven#h_2484bbd424)
 
-<br>Add the version variable to your `gradle.properties` and replace the version by the desired available library version of your choice:
+<br>Add the version variable to your `gradle.properties` and replace `{version}` by the desired available library version of your choice:
 ```groovy
-    hs_colorful_logger=1.0.2
+    hs_colorful_logger={version}
 ```
 
 ## Implementation
@@ -99,7 +99,7 @@ Create a `public static final` instance of the `ColorfulLogger` class. This inst
     
     public class FabricMod implements ModInitializer {
         public static final String MOD_ID = "your-mod-id";
-        public static final ColorfulLogger LOGGER = new ColorfulLogger("your-mod-id", false);
+        public static final ColorfulLogger LOGGER = ColorfulLogger.getInstance("your-mod-id", false);
  
        @Override
        public void onInitialize() {
@@ -109,21 +109,31 @@ Create a `public static final` instance of the `ColorfulLogger` class. This inst
        }
     }
 ```
-> **NOTE:** `ColorfulLogger` can be declared anywhere in the project. It is recommended, however, ***it should only ever be declared once***. To import the declared variable as a *static import* when referencing the instantiated instance:
+> **NOTE:** `ColorfulLogger` can be declared anywhere in the project. It is recommended, however, ***to only ever declare this once***. To import the declared variable as a *static import* when referencing the instantiated instance:
 > ```java
 > import static com.packagename.FabricMod.LOGGER;
 > ```
+> **ALTERNATIVELY:** `ColorfulLogger` can be instanced anywhere in the project and declared as follows if required:
+> ```java
+> private static final ColorfulLogger LOGGER = ColorfulLogger.getInstance();
+> ```
 
-If required, the `Logger` can be interfaced with by calling it as follows:
+<p>If required, the `Logger` can be interfaced with by calling it as follows:</p>
+
 ```java
     LOGGER.getLogger(); // Returns the Logger to be interfaced with.
 ```
-This will, however, not implement the ANSI color coding to your output if accessed this way.<br>
+
+<p>This will, however, not implement the ANSI color coding to your output if accessed this way.</p>
+
+<br>
 
 ## Sources
-***Only if using Modrinth Maven as a dependency, there is a sources file available in the versions download.***<br>
-This is a well define sources file where all variables, methods and constructors are well-defined as well as the class itself.
-You should download and add this file in the folder path:
+### [Only if using Modrinth Maven as a dependency]
+*<p>There is a sources file available in the versions download.</p>*
+<p>This is a well define sources file where all variables, methods and constructors are well-defined as well as the class itself.
+You should download and add this file in the folder path:</p>
+
 ```
 .gradle/loom-cache/remapped_mods/net_fabricmc_yarn{version}/maven/colorfulloggerlib/{hs_colorful_logger_version}/
 ```
