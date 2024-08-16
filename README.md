@@ -109,14 +109,27 @@ Create a `public static final` instance of the `ColorfulLogger` class. This inst
        }
     }
 ```
-> **NOTE:** `ColorfulLogger` can be declared anywhere in the project. It is recommended, however, ***to only ever declare this once***. To import the declared variable as a *static import* when referencing the instantiated instance:
+<p>If required, the `Logger` can be interfaced with by calling it as follows:</p>
+
+```java
+    LOGGER.getLogger(); // Returns the Logger to be interfaced with.
+```
+
+<p>This will, however, not implement the ANSI color coding to your output if accessed this way.</p>
+
+
+> **NOTE:** A `ColorfulLogger` variable can be declared anywhere in the project. It is recommended, however, ***to only ever declare this once as it is a singleton***.
+> <br><br>
+> To import the declared variable as a *static import* when referencing the variable:
 > ```java
 > import static com.packagename.FabricMod.LOGGER;
 > ```
-> **ALTERNATIVELY:** `ColorfulLogger` can be instanced anywhere in the project and declared as follows if required:
+
+> **ALTERNATIVELY:** `ColorfulLogger` can be instantiated anywhere in the project as follows if required after the singleton is declared:
 > ```java
 > public class References {
 >       private static final ColorfulLogger LOGGER = ColorfulLogger.getInstance();
+> 
 >       public static ColorfulLogger getLogger() {
 >           return LOGGER;
 >       }
@@ -130,14 +143,6 @@ Create a `public static final` instance of the `ColorfulLogger` class. This inst
 >       References.getLogger();
 > }
 > ```
-
-<p>If required, the `Logger` can be interfaced with by calling it as follows:</p>
-
-```java
-    LOGGER.getLogger(); // Returns the Logger to be interfaced with.
-```
-
-<p>This will, however, not implement the ANSI color coding to your output if accessed this way.</p>
 
 <br>
 
