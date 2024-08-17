@@ -86,6 +86,31 @@ public abstract class ExceptionStringSnippets {
     }
 
     /**
+     * Generates a standardized error message for null checks during assignment operations.
+     *
+     * @param target the target instance name.
+     * @param instanceOf the class or type being assigned to.
+     * @param method the method where the check occurs.
+     * @return formatted error message.
+     */
+    public static String nonNullAssignError_Snippet(String target, String instanceOf, String method) {
+        return nonNullAssign_Snippet("ERROR", target, instanceOf, method);
+    }
+
+    /**
+     * Generates a custom error message for null checks during assignment operations.
+     *
+     * @param outputType the type of output message.
+     * @param target the target instance name.
+     * @param instanceOf the class or type being assigned to.
+     * @param method the method where the check occurs.
+     * @return formatted error message.
+     */
+    public static String nonNullAssign_Snippet(String outputType, String target, String instanceOf, String method) {
+        return String.format("[%s]: Target of '%s' must not be null when assigning to instance of '@%s' at '@%s'.", outputType, target, instanceOf, method);
+    }
+
+    /**
      * Generates an error message for duplicate key exceptions.
      *
      * @param argument the argument involved in the duplication.
