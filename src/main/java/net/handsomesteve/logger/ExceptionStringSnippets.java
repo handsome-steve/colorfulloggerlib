@@ -29,8 +29,8 @@ package net.handsomesteve.logger;
  * </font></p>
  *
  * @author handsome-steve
- * @version 1.1.1
- * @since 1.1.1
+ * @version 2.1.0
+ * @since 2.1.0
  */
 public abstract class ExceptionStringSnippets {
 
