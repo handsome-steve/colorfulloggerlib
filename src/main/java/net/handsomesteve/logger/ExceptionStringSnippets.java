@@ -51,6 +51,19 @@ public abstract class ExceptionStringSnippets {
     }
 
     /**
+     * Generates a standardized error message for non-null parameter checks
+     * that require singleton declarations to be instanced.
+     *
+     * @param param the name of the parameter.
+     * @param method the method name where the check occurs.
+     * @param singleton the singleton class reference.
+     * @return formatted error message.
+     */
+    public static String nonNullParamError_Snippet(String param, String method, String singleton) {
+        return nonNullParam_Snippet("ERROR", param, method, singleton);
+    }
+
+    /**
      * Generates a customized error message based on provided parameters and formatting preferences.
      *
      * @param outputType the type of output message.
@@ -60,6 +73,20 @@ public abstract class ExceptionStringSnippets {
      */
     public static String nonNullParam_Snippet(String outputType, String param, String method) {
         return String.format("[%s]: Parameter '%s' must not be null when calling '@%s'.", outputType, param, method);
+    }
+
+    /**
+     * Generates a customized error message based on provided parameters and formatting preferences
+     * that require singleton declarations to be instanced.
+     *
+     * @param outputType the type of output message.
+     * @param param the name of the parameter.
+     * @param method the method name where the check occurs.
+     * @param singleton the singleton class reference.
+     * @return formatted error message.
+     */
+    public static String nonNullParam_Snippet(String outputType, String param, String method, String singleton) {
+        return String.format("[%s]: Internal parameter '%s' must not be null when calling '@%s'. Ensure that the target class is declared as a singleton in your mod's main file, by calling '@%s'.", outputType, param, method, singleton);
     }
 
     /**
