@@ -64,7 +64,7 @@ public final class ColorfulLogger
 {
 
     /**
-     * Singleton instance of the logger.
+     * Singleton instance of {@link ColorfulLogger}.
      */
     private static ColorfulLogger INSTANCE;
 
@@ -105,7 +105,7 @@ public final class ColorfulLogger
     /**
      * Private constructor for creating a logger instance with a mod identifier.
      *
-     * @param modId the mod identifier used to create the logger
+     * @param modId the mod identifier used to create the logger.
      */
     private ColorfulLogger(@NotNull String modId)
     {
@@ -116,8 +116,8 @@ public final class ColorfulLogger
     /**
      * Private constructor for creating a logger instance with a mod identifier and a debug flag.
      *
-     * @param modId the mod identifier used to create the logger
-     * @param showDebug true to enable debugging output, false otherwise
+     * @param modId the mod identifier used to create the logger.
+     * @param showDebug true to enable debugging output, false otherwise.
      */
     private ColorfulLogger(@NotNull String modId, boolean showDebug)
     {
@@ -128,9 +128,9 @@ public final class ColorfulLogger
     /**
      * Retrieves the singleton logger instance for the specified mod ID. If no instance exists, it creates one.
      *
-     * @param modId the unique identifier for the mod, must not be null
-     * @return the singleton ColorfulLogger instance
-     * @throws NullPointerException if {@code modId} is null, with an explanation in the error message
+     * @param modId the unique identifier for the mod, must not be null.
+     * @return the singleton ColorfulLogger instance.
+     * @throws NullPointerException if {@code modId} is null, with an explanation in the error message.
      */
     @NotNull
     public static synchronized ColorfulLogger getInstance(@NotNull String modId)
@@ -149,10 +149,10 @@ public final class ColorfulLogger
     /**
      * Retrieves or creates a singleton logger instance with a specific debug setting for the specified mod ID.
      *
-     * @param modId the mod identifier, cannot be null
-     * @param showDebug true enables debugging, false disables it
-     * @return the singleton ColorfulLogger instance
-     * @throws NullPointerException if {@code modId} is null, with an error message specifying the issue
+     * @param modId the mod identifier, cannot be null.
+     * @param showDebug true enables debugging, false disables it..
+     * @return the singleton ColorfulLogger instance.
+     * @throws NullPointerException if {@code modId} is null, with an error message specifying the issue.
      */
     @NotNull
     public static synchronized ColorfulLogger getInstance(@NotNull String modId, boolean showDebug)
