@@ -74,7 +74,9 @@ public final class ColorfulLogger
     private final Logger LOGGER;
 
     /**
-     * Retrieves the current logger instance.
+     * <h6>Retrieves the current logger instance.</h6>
+     *
+     * <p>This method retrieves the current {@link ColorfulLogger#LOGGER} instance from the {@link ColorfulLogger} singleton instance.</p>
      *
      * @return the active Logger instance
      */
@@ -89,21 +91,31 @@ public final class ColorfulLogger
     private boolean debug;
 
     /**
-     * Checks if debugging is enabled.
+     * <h6>Checks if debugging is enabled.</h6>
+     *
+     * <p>This method retrieves the current value of {@link ColorfulLogger#debug} from the {@link ColorfulLogger} singleton instance.</p>
      *
      * @return true if debugging is enabled, false otherwise.
      */
     public boolean getDebug() { return this.debug; }
 
     /**
-     * Sets the debugging state.
+     * <h6>Sets the debugging state.</h6>
+     *
+     * <p>This method assigns the value of {@link ColorfulLogger#debug} from the {@link ColorfulLogger} singleton instance.</p>
      *
      * @param value true to enable debugging, false to disable.
      */
     public void setDebug(boolean value) { this.debug = value; }
 
     /**
-     * Private constructor for creating a logger instance with a mod identifier.
+     * <h6>Private constructor for creating a logger instance with a mod identifier.</h6>
+     *
+     * <p>
+     * This constructor initializes the {@link ColorfulLogger#LOGGER} instance from
+     * parameter values and defaults the {@link ColorfulLogger#debug} instance
+     * to {@code true}.
+     * </p>
      *
      * @param modId the mod identifier used to create the logger.
      */
@@ -114,7 +126,12 @@ public final class ColorfulLogger
     }
 
     /**
-     * Private constructor for creating a logger instance with a mod identifier and a debug flag.
+     * <h6>Private constructor for creating a logger instance with a mod identifier and a debug flag.</h6>
+     *
+     * <p>
+     * This constructor initializes the {@link ColorfulLogger#LOGGER} instance and
+     * the {@link ColorfulLogger#debug} instance from parameter values.
+     * </p>
      *
      * @param modId the mod identifier used to create the logger.
      * @param showDebug true to enable debugging output, false otherwise.
@@ -126,7 +143,12 @@ public final class ColorfulLogger
     }
 
     /**
-     * Retrieves the singleton logger instance for the specified mod ID. If no instance exists, it creates one.
+     * <h6>Retrieves the {@link ColorfulLogger} instance by parsing a specified mod ID.</h6>
+     *
+     * <p>
+     * This method retrieve the {@code ColorfulLogger} singleton instance by parsing
+     * a specified mod ID, if no instance exists, it creates one.
+     * </p>
      *
      * @param modId the unique identifier for the mod, must not be null.
      * @return the singleton ColorfulLogger instance.
@@ -147,7 +169,12 @@ public final class ColorfulLogger
     }
 
     /**
-     * Retrieves or creates a singleton logger instance with a specific debug setting for the specified mod ID.
+     * <h6>Retrieves the {@link ColorfulLogger} instance by parsing a specified mod ID and debug flag.</h6>
+     *
+     * <p>
+     * This method retrieve the {@code ColorfulLogger} singleton instance by parsing
+     * a specified mod ID and a debug flag, if no instance exists, it creates one.
+     * </p>
      *
      * @param modId the mod identifier, cannot be null.
      * @param showDebug true enables debugging, false disables it..
@@ -169,8 +196,9 @@ public final class ColorfulLogger
     }
 
     /**
-     * Gets the already-initialized singleton instance of {@link ColorfulLogger}.
-     * This method can only be called after the singleton has been initialized with parameters.
+     * <h6>Retrieves the already-initialized singleton instance of {@link ColorfulLogger}.</h6>
+     *
+     * <p>This method can only be called after the singleton has been initialized with parameters.</p>
      *
      * @return The singleton instance of {@link ColorfulLogger}.
      * @throws IllegalStateException if the singleton has not been initialized with parameters.
@@ -183,7 +211,9 @@ public final class ColorfulLogger
     }
 
     /**
-     * Prints out a plain message via the internal {@link org.slf4j.Logger} without any coloring applied to the console.
+     * <h6>Default logger print method without color.</h6>
+     *
+     * <p>This method prints out a plain message via the internal {@link org.slf4j.Logger} without any coloring applied to the console.</p>
      *
      * @param message the message to log
      */
@@ -194,7 +224,9 @@ public final class ColorfulLogger
     }
 
     /**
-     * <Overload method that prints out a colorful message via the internal {@link org.slf4j.Logger} by coloring the foreground only.
+     * <h6>Overload logger print method with foreground color.</h6>
+     *
+     * <p>This overload method prints out a colorful message via the internal {@link org.slf4j.Logger} by coloring the foreground only.</p>
      *
      * @param message Takes the message to be printed out as a {@link String}.
      * @param ansiColorText Takes an ANSI color value from {@link AnsiColorText}.
@@ -206,7 +238,9 @@ public final class ColorfulLogger
     }
 
     /**
-     * <Overload method that prints out a colorful message via the internal {@link org.slf4j.Logger} by coloring the foreground and background.
+     * <h6>Overload logger print method with foreground and background color.</h6>
+     *
+     * <p>This overload method prints out a colorful message via the internal {@link org.slf4j.Logger} by coloring the foreground and background.</p>
      *
      * @param message Takes the message to be printed out as a {@link String}.
      * @param ansiColorText Takes an ANSI color value from {@link AnsiColorText}.
